@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Surface */
+    --color-bg-base: hsl(38, 60%, 99%);
+    --color-bg-elevated: hsl(0, 0%, 100%);
+    --color-bg-sunken: hsl(38, 40%, 96%);
+    --color-bg-overlay: hsla(38, 40%, 96%, 0.80);
+    --color-bg-glass: hsla(255, 255%, 255%, 0.72);
+    --color-bg-glass-border: hsla(0, 0%, 100%, 0.60);
+
+    /* Text */
+    --color-text-primary: hsl(38, 8%, 10%);
+    --color-text-secondary: hsl(38, 8%, 32%);
+    --color-text-tertiary: hsl(38, 8%, 52%);
+    --color-text-disabled: hsl(38, 6%, 70%);
+    --color-text-inverse: hsl(0, 0%, 100%);
+    --color-text-on-brand: hsl(0, 0%, 100%);
+
+    /* Brand Semantic */
+    --color-brand: hsl(33, 93%, 50%);
+    --color-brand-hover: hsl(28, 92%, 43%);
+    --color-brand-light: hsl(33, 100%, 96%);
+    --color-brand-muted: hsl(33, 100%, 90%);
+    --color-secondary: hsl(147, 32%, 38%);
+    --color-secondary-hover: hsl(147, 34%, 31%);
+    --color-secondary-light: hsl(147, 40%, 96%);
+    --color-secondary-muted: hsl(147, 38%, 88%);
+
+    /* Interactive */
+    --color-border: hsl(38, 20%, 88%);
+    --color-border-subtle: hsl(38, 20%, 92%);
+    --color-border-strong: hsl(38, 18%, 78%);
+    --color-border-brand: hsl(33, 96%, 68%);
+
+    /* States */
+    --color-success: hsl(147, 50%, 38%);
+    --color-success-bg: hsl(147, 50%, 96%);
+    --color-warning: hsl(40, 95%, 44%);
+    --color-warning-bg: hsl(48, 100%, 95%);
+    --color-error: hsl(0, 72%, 48%);
+    --color-error-bg: hsl(0, 100%, 97%);
+    --color-info: hsl(198, 72%, 40%);
+    --color-info-bg: hsl(198, 90%, 95%);
+
+    /* Card */
+    --card-bg: var(--color-bg-elevated);
+    --card-border: var(--color-border-subtle);
+    --card-shadow: 0 2px 4px 0 rgba(0,0,0,0.06), 0 1px 2px -1px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 8px 24px 0 rgba(0,0,0,0.10), 0 4px 8px -4px rgba(0,0,0,0.06);
+    --card-radius: 16px;
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px 0 rgba(0,0,0,0.04);
+    --shadow-sm: 0 2px 4px 0 rgba(0,0,0,0.06), 0 1px 2px -1px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px 0 rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.04);
+    --shadow-lg: 0 8px 24px 0 rgba(0,0,0,0.10), 0 4px 8px -4px rgba(0,0,0,0.06);
+    --shadow-xl: 0 16px 40px 0 rgba(0,0,0,0.12), 0 8px 16px -8px rgba(0,0,0,0.07);
+    --shadow-2xl: 0 24px 64px 0 rgba(0,0,0,0.15), 0 12px 24px -12px rgba(0,0,0,0.08);
+
+    /* Navigation */
+    --nav-bg: hsla(255, 100%, 100%, 0.90);
+    --nav-border: var(--color-border-subtle);
+    --nav-active: var(--color-brand);
+    --nav-inactive: var(--color-text-tertiary);
+  }
+
+  [data-theme="dark"] {
+    --color-bg-base: hsl(30, 8%, 9%);
+    --color-bg-elevated: hsl(30, 7%, 13%);
+    --color-bg-sunken: hsl(30, 8%, 7%);
+    --color-bg-overlay: hsla(30, 8%, 12%, 0.85);
+    --color-bg-glass: hsla(30, 10%, 16%, 0.75);
+    --color-bg-glass-border: hsla(30, 20%, 30%, 0.40);
+
+    --color-text-primary: hsl(38, 20%, 95%);
+    --color-text-secondary: hsl(38, 12%, 72%);
+    --color-text-tertiary: hsl(38, 8%, 50%);
+    --color-text-disabled: hsl(38, 6%, 35%);
+    --color-text-inverse: hsl(38, 8%, 10%);
+    --color-text-on-brand: hsl(0, 0%, 100%);
+
+    --color-brand: hsl(33, 95%, 58%);
+    --color-brand-hover: hsl(33, 96%, 68%);
+    --color-brand-light: hsla(33, 93%, 50%, 0.12);
+    --color-brand-muted: hsla(33, 93%, 50%, 0.20);
+    --color-secondary: hsl(147, 30%, 48%);
+    --color-secondary-hover: hsl(147, 32%, 60%);
+    --color-secondary-light: hsla(147, 32%, 48%, 0.12);
+    --color-secondary-muted: hsla(147, 32%, 48%, 0.20);
+
+    --color-border: hsl(30, 8%, 20%);
+    --color-border-subtle: hsl(30, 8%, 16%);
+    --color-border-strong: hsl(30, 8%, 28%);
+    --color-border-brand: hsla(33, 93%, 50%, 0.40);
+
+    --color-success: hsl(147, 60%, 48%);
+    --color-success-bg: hsla(147, 60%, 48%, 0.12);
+    --color-warning: hsl(48, 100%, 52%);
+    --color-warning-bg: hsla(48, 100%, 50%, 0.12);
+    --color-error: hsl(0, 72%, 58%);
+    --color-error-bg: hsla(0, 72%, 58%, 0.12);
+    --color-info: hsl(198, 80%, 58%);
+    --color-info-bg: hsla(198, 80%, 58%, 0.12);
+
+    --card-bg: var(--color-bg-elevated);
+    --card-border: var(--color-border-subtle);
+    --card-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+    --card-shadow-hover: 0 8px 28px 0 rgba(0,0,0,0.32);
+    --card-radius: 16px;
+
+    --shadow-xs: 0 1px 2px 0 rgba(0,0,0,0.15);
+    --shadow-sm: 0 2px 4px 0 rgba(0,0,0,0.20);
+    --shadow-md: 0 4px 12px 0 rgba(0,0,0,0.28);
+    --shadow-lg: 0 8px 24px 0 rgba(0,0,0,0.35);
+    --shadow-xl: 0 16px 40px 0 rgba(0,0,0,0.42);
+    --shadow-2xl: 0 24px 64px 0 rgba(0,0,0,0.50);
+
+    --nav-bg: hsla(30, 8%, 11%, 0.92);
+    --nav-border: var(--color-border);
+    --nav-active: var(--color-brand);
+    --nav-inactive: var(--color-text-tertiary);
+  }
+
+  body {
+    @apply font-sans text-base font-regular leading-normal text-text-primary bg-bg-base transition-colors duration-moderate ease-standard antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-border-strong rounded-pill hover:bg-text-tertiary; }
+}
+
+@layer components {
+  .nav-blur {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+  
+  .glass-card {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid var(--color-bg-glass-border);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .animate-in {
+    animation: slideUp 0.3s cubic-bezier(0.2, 0, 0, 1) both;
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-bg-sunken) 25%,
+      var(--color-bg-elevated) 50%,
+      var(--color-bg-sunken) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background: linear-gradient(135deg, var(--color-brand), hsl(28, 92%, 43%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .border-gradient-brand {
+    border-image: linear-gradient(135deg, var(--color-brand), var(--color-border-brand)) 1;
+  }
+  
+  .safe-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+}
+
+/* KEYFRAME ANIMATIONS */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(240, 123, 12, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(240, 123, 12, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(240, 123, 12, 0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes voicePulse {
+  0%, 100% { box-shadow: 0 0 0 12px hsla(198,72%,50%,0.12), 0 0 0 24px hsla(198,72%,50%,0.06); }
+  50% { box-shadow: 0 0 0 16px hsla(198,72%,50%,0.18), 0 0 0 32px hsla(198,72%,50%,0.08); }
+}
+
+@keyframes voiceBar {
+  0%, 100% { transform: scaleY(0.6); opacity: 0.6; }
+  50% { transform: scaleY(1.2); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes scanLine {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: var(--target-width); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes checkMark {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* AI typing dots */
+@keyframes typingDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
