@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MobileLayout from './components/layout/MobileLayout';
 import { useTheme } from './hooks/useTheme';
 
@@ -92,7 +92,7 @@ function App() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<MobileLayout />}>
           <Route path="/" element={<Navigate to="/home" replace />} />
@@ -181,7 +181,7 @@ function App() {
           <Route path="/design-system" element={<DesignSystem />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
